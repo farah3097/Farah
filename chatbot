@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VASO Chatbot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-container {
+      width: 400px;
+      max-width: 90%;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background-color: #d291bc;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .chat-box {
+      height: 400px;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 15px;
+    }
+
+    .bot {
+      background-color: #f3d1e5;
+      align-self: flex-start;
+    }
+
+    .user {
+      background-color: #e0c3fc;
+      align-self: flex-end;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #eee;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 0 0 0 20px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #d291bc;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0 0 20px 0;
+    }
+
+    button:hover {
+      background-color: #c36aa0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">VASO Beauty Bot</div>
+  <div class="chat-box" id="chat-box">
+    <div class="message bot">Hi there! 👋 I'm your VASO Beauty Assistant. Ask me about skincare products or what suits your skin best!</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  const chatBox = document.getElementById('chat-box');
+
+  function sendMessage() {
+    const input = document.getElementById('user-input');
+    const message = input.value.trim();
+    if (message === "") return;
+
+    addMessage("user", message);
+    respondToMessage(message.toLowerCase());
+    input.value = "";
+  }
+
+  function addMessage(sender, text) {
+    const msg = document.createElement('div');
+    msg.className = `message ${sender}`;
+    msg.textContent = text;
+    chatBox.appendChild(msg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function respondToMessage(msg) {
+    let response = "";
+
+    if (msg.includes("hi") || msg.includes("hello")) {
+      response = "Hello gorgeous! 💖 What can I help you find today? Skincare? Brightening? Sun protection?";
+    } else if (msg.includes("recommend") || msg.includes("suggest")) {
+      response = "Tell me what you're looking for! Moisturizing, brightening, exfoliating, or sun protection?";
+    } else if (msg.includes("scrub")) {
+      response = "Try our *VASO Face and Body Scrub* – exfoliates and refreshes your skin ✨.";
+    } else if (msg.includes("moisturizer") || msg.includes("dry") || msg.includes("body lotion")) {
+      response = "Our *VASO Body Lotion* is perfect for moisturizing and giving your skin a natural glow! 💧";
+    } else if (msg.includes("whitening") || msg.includes("brighten") || msg.includes("lightening")) {
+      response = "We have *VASO Skin Whitening Cream* and *Lotion* – designed to reduce dark spots and brighten your tone 🌟.";
+    } else if (msg.includes("sun") || msg.includes("sunscreen")) {
+      response = "Protect your skin with our *VASO Sunscreen Cream & Lotion*, enriched with vitamins ☀️.";
+    } else if (msg.includes("facewash") || msg.includes("clean")) {
+      response = "Our *VASO Facewash* deeply cleanses and refreshes your skin with fruity extracts 🍓.";
+    } else if (msg.includes("thank")) {
+      response = "You're always welcome! Let me know if you want more product tips 💕";
+    } else {
+      response = "Hmm... I didn't catch that! Could you ask about skincare, brightening, or sunscreen again?";
+    }
+
+    setTimeout(() => addMessage("bot", response), 600);
+  }
+</script>
+
+</body>
+</html>
+

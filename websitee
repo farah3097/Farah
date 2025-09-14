@@ -1,0 +1,207 @@
+'use client';
+
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Send, Phone } from 'lucide-react';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-background text-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4">
+            TRIPLE A
+          </h1>
+          <h2 className="text-3xl md:text-4xl font-heading text-foreground mb-6">
+            AUTOMATIONS
+          </h2>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            Automate · Accelerate · Achieve
+          </p>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
+            Transforming businesses through intelligent automation solutions that drive efficiency, growth, and innovation.
+          </p>
+        </div>
+      </section>
+
+      {/* Who We Are Section */}
+      <section className="py-20 bg-background px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-heading font-bold text-foreground text-center mb-12">
+            Who we are
+          </h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto">
+            We transform businesses through intelligent automation, delivering measurable results that drive sustainable growth and operational excellence.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <div className="p-6">
+              <h3 className="text-2xl font-heading text-foreground mb-4">Automate</h3>
+              <p className="text-muted-foreground">
+                Streamline repetitive tasks and eliminate manual processes
+              </p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-heading text-foreground mb-4">Accelerate</h3>
+              <p className="text-muted-foreground">
+                Speed up workflows and decision-making processes
+              </p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-heading text-foreground mb-4">Achieve</h3>
+              <p className="text-muted-foreground">
+                Deliver measurable results and business growth
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions Section */}
+      <section className="py-20 bg-muted/50 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-heading font-bold text-foreground text-center mb-12">
+            Our Solutions
+          </h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto">
+            Transform your business with AI automation solutions designed to automate, accelerate, and help you achieve your goals.
+          </p>
+
+          <div className="space-y-12">
+            {/* Solution 1 */}
+            <div className="bg-card rounded-lg p-8 shadow-sm border border-border">
+              <h3 className="text-2xl font-heading text-foreground mb-4">24/7 Customer Support</h3>
+              <ul className="text-muted-foreground space-y-2 mb-6">
+                <li>• Instant 24/7 customer support</li>
+                <li>• Consistent answers across all channels</li>
+                <li>• Automated lead qualification</li>
+              </ul>
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 inline-block">
+                <p className="text-sm text-primary font-medium">
+                  Client Impact: Improved customer satisfaction by 45%, reduced support tickets by 60%
+                </p>
+              </div>
+            </div>
+
+            {/* Solution 2 */}
+            <div className="bg-card rounded-lg p-8 shadow-sm border border-border">
+              <h3 className="text-2xl font-heading text-foreground mb-4">Workflow Automation</h3>
+              <ul className="text-muted-foreground space-y-2 mb-6">
+                <li>• Seamless workflow orchestration</li>
+                <li>• Complete systems integration</li>
+                <li>• Reduce human errors by 95%</li>
+              </ul>
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 inline-block">
+                <p className="text-sm text-primary font-medium">
+                  Client Impact: Streamlined operations reduced processing time by 80%, eliminated data entry errors
+                </p>
+              </div>
+            </div>
+
+            {/* Solution 3 */}
+            <div className="bg-card rounded-lg p-8 shadow-sm border border-border">
+              <h3 className="text-2xl font-heading text-foreground mb-4">Lead Generation & Conversion</h3>
+              <ul className="text-muted-foreground space-y-2 mb-6">
+                <li>• 24/7 availability with zero downtime</li>
+                <li>• Reduce staffing costs by up to 70%</li>
+                <li>• Increase lead capture by 40%</li>
+              </ul>
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 inline-block">
+                <p className="text-sm text-primary font-medium">
+                  Client Impact: Decreased response time from minutes to seconds, raised conversion rates by 35%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-background px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-heading font-bold text-foreground mb-4">
+              Get in touch
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Ready to transform your business with AI automation? Let's discuss your needs and create a tailored solution.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+
+            {/* Contact Form - Replaced with Typeform */}
+            <div className="bg-card border-border rounded-lg overflow-hidden shadow-sm">
+              <div className="p-6">
+                <h3 className="text-2xl font-heading text-foreground mb-6">
+                  Send us a message
+                </h3>
+                
+                {/* Typeform Embed */}
+                <div 
+                  data-tf-live="01K52Z2N39PP8RFC7WM77SK12G" 
+                  style={{ width: '100%', height: '600px' }}
+                ></div>
+                <script src="//embed.typeform.com/next/embed.js" async></script>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card className="bg-card border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl font-heading text-foreground">
+                    Contact Information
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex items-start space-x-3">
+                    <Send className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium text-foreground">Email</p>
+                      <a 
+                        href="mailto:atripleautomations@gmail.com" 
+                        className="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        atripleautomations@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-medium text-foreground">Phone</p>
+                      <a 
+                        href="tel:+201080234655" 
+                        className="text-primary hover:text-primary/80 transition-colors"
+                      >
+                        +201080234655
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      We typically respond to all inquiries within 24 hours. 
+                      For urgent matters, please call us directly.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                <h4 className="text-sm font-medium text-foreground mb-2">Data Security & Privacy</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Your information is secure with us. All form submissions are stored safely in Google Sheets 
+                  and encrypted in transit. We use your contact details solely to respond to your inquiry 
+                  and never share your data with third parties.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
